@@ -6,7 +6,7 @@
  * ANALYSE 
  * =======
  * 
- * 
+ * BEREKEN  lijst
  * BEREKEN  som:
  *          HERHAAL     voor elk getalin de lijst
  *               som = som + getal
@@ -34,9 +34,33 @@ namespace DemoGemmiddelde
         static void Main(string[] args)
         {
             //DECLARATIES
-            byte[] lijst = { 10, 1, 8, 6, 7, 4 };
-            byte som = 0, aantal;
+            byte[] getallen = { 10, 1, 8, 6, 7, 4 };
+            List<byte> nogWatGetallen;
             float gemiddelde;
+            //input
+            //geen input
+            // BEREKEN  som:
+           
+            // BEREKEN  gemmiddelde (=som/aantal)
+            
+            gemiddelde = Gemmiddelde(getallen);
+            Console.WriteLine($"het gemmiddelde is {gemiddelde}");
+            
+            // TOON     gemmiddelde    
+            //wachten
+            Console.WriteLine();
+            Console.WriteLine("druk op enter om af te sluiten");
+            Console.ReadKey();
+        }
+        /// <summary>
+        /// bereken het gemmiddelde van een lijst met getallen 
+        /// </summary>
+        /// <param name="lijst"></param>
+        /// <returns></returns>
+        private static float Gemmiddelde(byte[] lijst)
+        {
+            byte som = 0, aantal;
+            float returnvalue, gemiddelde;
             //input
             //geen input
             // BEREKEN  som:
@@ -51,12 +75,10 @@ namespace DemoGemmiddelde
             aantal = (byte)lijst.Length;
             // BEREKEN  gemmiddelde (=som/aantal)
             gemiddelde = (float)(som / aantal);
+            gemiddelde = Gemmiddelde(lijst);
             Console.WriteLine($"het gemmiddelde is {gemiddelde}");
-            // TOON     gemmiddelde    
-            //wachten
-            Console.WriteLine();
-            Console.WriteLine("druk op enter om af te sluiten");
-            Console.ReadKey();
+
+            
         }
     }
 }
